@@ -8,5 +8,10 @@
             "email": "nasrulhazim.m@gmail.com"
         }
     ],
-    "require": {}
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "CleaniqueCoders\\": "src/"
+        }
+    }
 }
