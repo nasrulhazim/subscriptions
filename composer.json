@@ -1,0 +1,12 @@
+{
+    "name": "cleaniquecoders/subscriptions",
+    "description": "Subscription Package for SaaS Based Application",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nasrul Hazim",
+            "email": "nasrulhazim.m@gmail.com"
+        }
+    ],
+    "require": {}
+}
