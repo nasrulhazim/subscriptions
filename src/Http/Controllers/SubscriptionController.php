@@ -3,11 +3,15 @@
 namespace CleaniqueCoders\Subscription\Http\Controllers;
 
 use CleaniqueCoders\Subscription\Subscription;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 
 class SubscriptionController extends Controller
 {
-
+    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     /**
      * Display a listing of the resource.
      *
