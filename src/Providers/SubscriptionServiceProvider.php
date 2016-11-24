@@ -1,6 +1,6 @@
 <?php
 
-namespace CleaniqueCoders\Providers;
+namespace CleaniqueCoders\Subscription\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace CleaniqueCoders\Traits\Subscriptions;
+namespace CleaniqueCoders\Subscription\Traits\Subscriptions;
 
 trait User
 {

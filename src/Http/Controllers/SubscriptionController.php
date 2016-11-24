@@ -1,8 +1,8 @@
 <?php
 
-namespace CleaniqueCoders\Http\Controllers;
+namespace CleaniqueCoders\Subscription\Http\Controllers;
 
-use CleaniqueCoders\Subscription;
+use CleaniqueCoders\Subscription\Subscription;
 use Illuminate\Http\Request;
 
 class SubscriptionController extends Controller

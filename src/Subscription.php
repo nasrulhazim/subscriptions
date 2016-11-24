@@ -1,6 +1,6 @@
 <?php
 
-namespace CleaniqueCoders;
+namespace CleaniqueCoders\Subscription;
 
 use Illuminate\Database\Eloquent\Model;
 

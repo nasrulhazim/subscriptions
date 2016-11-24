@@ -1,6 +1,6 @@
 <?php
 
-namespace CleaniqueCoders\Http\Requests;
+namespace CleaniqueCoders\Subscription\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
