@@ -14,23 +14,23 @@ class SubscriptionServiceProvider extends ServiceProvider
     public function boot()
     {
         if ($this->app->runningInConsole()) {
-            $this->loadMigrationsFrom(dirname(dirname(__FILE__)) . '/database/migrations/');
+            $this->loadMigrationsFrom(dirname(__FILE__) . '/database/migrations/');
         }
 
-        $this->loadRoutesFrom(dirname(dirname(__FILE__)) . '/routes/web.php');
+        $this->loadRoutesFrom(dirname(__FILE__) . '/routes/web.php');
 
-        $this->loadViewsFrom(dirname(dirname(__FILE__)) . '/resources/views', 'subscriptions');
+        $this->loadViewsFrom(dirname(__FILE__) . '/resources/views', 'subscriptions');
 
         $this->publishes([
-            dirname(dirname(__FILE__)) . '/config/subscription.php' => config_path('subscription.php'),
+            dirname(__FILE__) . '/config/subscription.php' => config_path('subscription.php'),
         ], 'config');
 
         $this->publishes([
-            dirname(dirname(__FILE__)) . '/resources/views' => resource_path('views/vendor/subscriptions'),
+            dirname(__FILE__) . '/resources/views' => resource_path('views/vendor/subscriptions'),
         ], 'resources');
 
         $this->publishes([
-            dirname(dirname(__FILE__)) . '/public' => public_path(),
+            dirname(__FILE__) . '/public' => public_path(),
         ], 'public');
     }
 
