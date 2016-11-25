@@ -32,6 +32,10 @@ class SubscriptionServiceProvider extends ServiceProvider
         $this->publishes([
             dirname(__FILE__) . '/public' => public_path(),
         ], 'public');
+
+        $this->publishes([
+            dirname(__FILE__) . '/database/seeds' => database_path('seeds'),
+        ], 'seeder');
     }
 
     /**
