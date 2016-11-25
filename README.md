@@ -11,7 +11,7 @@ composer require cleaniquecoders/subscriptions
 Open up `config/app.php` and add the following in `providers` key:
 
 ```php
-CleaniqueCoders\Providers\SubscriptionServiceProvider::class,
+CleaniqueCoders\Subscription\SubscriptionServiceProvider::class,
 ```
 
 ## Register Subscription Middleware
@@ -19,8 +19,12 @@ CleaniqueCoders\Providers\SubscriptionServiceProvider::class,
 Open up `app/Http/Kernel.php` and add the following in `$routeMiddleware`:
 
 ```php
-'subscription' => \CleaniqueCoders\Http\Middleware\Subscription::class,
+'subscription' => \CleaniqueCoders\Subscription\Http\Middleware\Subscription::class,
 ```
+
+### Migration
+
+Run `php artisan migrate` to create tables used in this package.
 
 ## Trait
 
