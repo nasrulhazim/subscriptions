@@ -3,7 +3,7 @@
 namespace CleaniqueCoders\Subscription\Http\Middleware;
 
 use Carbon\Carbon;
-use CleaniqueCoders\SubscriptionUser;
+use CleaniqueCoders\Subscription\SubscriptionUser;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
