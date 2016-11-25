@@ -2,7 +2,10 @@
 
 namespace CleaniqueCoders\Subscription\Http\Controllers;
 
+use Auth;
+use Carbon\Carbon;
 use CleaniqueCoders\Subscription\Subscription;
+use CleaniqueCoders\Subscription\SubscriptionUser;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
