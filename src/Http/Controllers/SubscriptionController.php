@@ -79,7 +79,7 @@ class SubscriptionController extends Controller
     public function update(Request $request, $id)
     {
         Subscription::where('id', $id)->update($request->except('_token', '_method', 'submit'));
-        return redirect('/subscriptions');
+        return redirect()->route('subscriptions.index');
     }
 
     /**
@@ -91,7 +91,7 @@ class SubscriptionController extends Controller
     public function destroy($id)
     {
         Subscription::destroy($id);
-        return redirect('/subscriptions');
+        return redirect()->route('subscriptions.index');
     }
 
     public function subscribe(Request $request, $id)
@@ -123,12 +123,12 @@ class SubscriptionController extends Controller
     public function unsubscribed()
     {
         $subscriptions = Subscription::where('status', 1)->get();
-        return view('subscriptions.unsubscribed', compact('subscriptions'));
+        return view('subscriptions::subscriptions.unsubscribed', compact('subscriptions'));
     }
 
     public function expired()
     {
         $subscriptions = Subscription::where('status', 1)->get();
-        return view('subscriptions.expired', compact('subscriptions'));
+        return view('subscriptions::subscriptions.expired', compact('subscriptions'));
     }
 }
