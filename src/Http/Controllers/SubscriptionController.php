@@ -96,7 +96,28 @@ class SubscriptionController extends Controller
 
     public function subscribe(Request $request, $id)
     {
-        // redirect to Gateway if  the package exist, else, js subscribe
+        if ($this->subscribeUser($id)) {
+            return redirect(config('subscription.redirect.success'));
+        } else {
+            return redirect(config('subscription.redirect.failed'));
+        }
+    }
+
+    public function subscribeUser($id)
+    {
+        $subscription = Subscription::find($id);
+        $subscribed_at = Carbon::now();
+        $type = $subscription->type;
+
+        $subscriptionUser = SubscriptionUser::create([
+            'subscription_id' => $subscription->id,
+            'user_id' => Auth::user()->id,
+            'status' => 1,
+            'subscribed_at' => Carbon::now(),
+            'expired_at' => ($type == 0) ? $subscribed_at->addMonths($subscription->duration) : $subscribed_at->addYears($subscription->duration),
+        ]);
+
+        return $subscriptionUser;
     }
 
     public function unsubscribed()

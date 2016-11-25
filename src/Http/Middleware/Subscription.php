@@ -18,7 +18,9 @@ class Subscription
      */
     public function handle($request, Closure $next)
     {
-        $exist = SubscriptionUser::where('user_id', Auth::user()->id)->first();
+        $exist = SubscriptionUser::where('status', 1)
+            ->where('user_id', Auth::user()->id)->first();
+
         if (empty($exist)) {
             return redirect()->route('subscriptions.unsubscribed');
         }
