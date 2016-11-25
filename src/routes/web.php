@@ -9,6 +9,5 @@ Route::group(['middleware' => ['auth']], function () {
 });
 
 Route::group(['middleware' => ['auth', 'subscription']], function () {
-    Route::get('/home', 'HomeController@index');
     Route::resource('subscriptions', '\CleaniqueCoders\Subscription\Http\Controllers\SubscriptionController');
 });
