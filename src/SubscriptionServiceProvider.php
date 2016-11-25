@@ -22,7 +22,7 @@ class SubscriptionServiceProvider extends ServiceProvider
         $this->loadViewsFrom(dirname(__FILE__) . '/resources/views', 'subscriptions');
 
         $this->publishes([
-            dirname(__FILE__) . '/config/subscription.php' => config_path('subscription.php'),
+            dirname(__FILE__) . '/config' => config_path(),
         ], 'config');
 
         $this->publishes([
