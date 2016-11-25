@@ -23,7 +23,7 @@
                     <p class="product-description">{{ $subscription->details }}</p>
                     <div class="row">
                         <div class="col-xs-6">
-                            <a class="btn btn-default" href="{{ route('subscriptions.subscribe') }}">Subscribe Now!</a>
+                            <a class="btn btn-default" href="{{ route('subscriptions.subscribe', ['id' => $subscription->id]) }}">Subscribe Now!</a>
                         </div>
                         <div class="col-xs-6">
                             <p class="product-price">{{ config('subscription.currency') }} {{ $subscription->price }}</p>
