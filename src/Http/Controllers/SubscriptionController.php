@@ -93,4 +93,21 @@ class SubscriptionController extends Controller
         Subscription::destroy($id);
         return redirect('/subscriptions');
     }
+
+    public function subscribe(Request $request, $id)
+    {
+        // redirect to Gateway if  the package exist, else, js subscribe
+    }
+
+    public function unsubscribed()
+    {
+        $subscriptions = Subscription::where('status', 1)->get();
+        return view('subscriptions.unsubscribed', compact('subscriptions'));
+    }
+
+    public function expired()
+    {
+        $subscriptions = Subscription::where('status', 1)->get();
+        return view('subscriptions.expired', compact('subscriptions'));
+    }
 }

@@ -8,7 +8,19 @@ composer require cleaniquecoders/subscriptions
 
 ## Register Service Provider
 
-Open up `config/app.php` and register `CleaniqueCoders\Providers\SubscriptionServiceProvider::class,` in `providers` key.
+Open up `config/app.php` and add the following in `providers` key:
+
+```php
+CleaniqueCoders\Providers\SubscriptionServiceProvider::class,
+```
+
+## Register Subscription Middleware
+
+Open up `app/Http/Kernel.php` and add the following in `$routeMiddleware`:
+
+```php
+'subscription' => \CleaniqueCoders\Http\Middleware\Subscription::class,
+```
 
 ## Trait
 
